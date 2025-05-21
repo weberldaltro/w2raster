@@ -1,0 +1,28 @@
+/* Estilos CSS do site W2 Raster */
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: #333; /* Mantendo a cor de texto padrão para a maioria do conteúdo */
+  background-color: #f4f4f4;
+}
+.section-padding {
+  padding: 4rem 1rem;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  /* Adicionado padding horizontal para telas menores */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+/* Estilos adicionais podem ser adicionados aqui se necessário */
+
+/* Ajuste para telas muito grandes */
+@media (min-width: 1536px) {
+  /* Breakpoint 2xl do Tailwind */
+  .container {
+    max-width: 1400px; /* Aumenta o max-width para telas muito grandes */
+  }
+}
