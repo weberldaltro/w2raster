@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W2 Raster - Rastreamento Veicular</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "w2-green": "#00A950", // Verde do logo
+              "w2-dark": "#332E30", // Cinza/Preto do logo (mantido para outros elementos)
+              "w2-black": "#000000", // Preto puro do logo
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/w2raster.png" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #333; /* Mantendo a cor de texto padrão para a maioria do conteúdo */
+        background-color: #f4f4f4;
+      }
+      .section-padding {
+        padding: 4rem 1rem;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        /* Adicionado padding horizontal para telas menores */
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      /* Estilos adicionais podem ser adicionados aqui se necessário */
+
+      /* Ajuste para telas muito grandes */
+      @media (min-width: 1536px) {
+        /* Breakpoint 2xl do Tailwind */
+        .container {
+          max-width: 1400px; /* Aumenta o max-width para telas muito grandes */
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <header class="bg-gray-200 text-w2-dark py-4 sticky top-0 z-50 shadow-md">
+      <div class="container flex justify-between items-center">
+        <img
+          src="w2raster.png"
+          alt="Logo W2 Raster"
+          class="h-8 md:h-12 lg:h-16 xl:h-20"
+        />
+        <nav class="flex items-center space-x-4 md:space-x-6">
+          <ul class="hidden md:flex space-x-4 md:space-x-6">
+            <li><a href="#sobre" class="hover:underline">Sobre Nós</a></li>
+            <li><a href="#servicos" class="hover:underline">Serviços</a></li>
+            <li>
+              <a href="#beneficios" class="hover:underline">Benefícios</a>
+            </li>
+            <li><a href="#contato" class="hover:underline">Contato</a></li>
+          </ul>
+          <a
+            href="https://ap3.stc.srv.br/webcliente/weber"
+            class="bg-w2-green text-w2-dark font-bold py-2 px-4 rounded hover:bg-green-400 transition duration-300 text-sm md:text-base"
+            target="_blank"
+          >
+            Área do cliente
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <section
+      id="hero"
+      class="bg-cover bg-center text-white text-center py-20"
+      style="
+        background-image: url('ChatGPT\ Image\ May\ 16\,\ 2025\,\ 11_46_36\ PM.png');
+      "
+    >
+      <div class="container">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          Proteja Seu Veículo com a W2 Raster
+        </h1>
+        <p class="text-lg md:text-xl mb-8">
+          Soluções de rastreamento veicular avançadas para sua segurança e
+          tranquilidade.
+        </p>
+        <a
+          href="#contato"
+          class="bg-w2-green text-w2-dark font-bold py-3 px-6 md:py-4 md:px-8 rounded-full text-base md:text-lg hover:bg-green-400 transition duration-300"
+          >Fale Conosco</a
+        >
+      </div>
+    </section>
+
+    <section id="sobre" class="section-padding bg-white">
+      <div class="container">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-center mb-8 text-w2-dark"
+        >
+          Sobre a W2 Raster
+        </h2>
+        <p
+          class="text-base md:text-lg text-center max-w-3xl mx-auto text-gray-700"
+        >
+          A W2 Raster é uma empresa dedicada a fornecer as melhores soluções em
+          rastreamento veicular. Com tecnologia de ponta e uma equipe
+          especializada, garantimos a segurança e o monitoramento eficaz do seu
+          patrimônio. Nossa missão é oferecer tranquilidade e controle total
+          para você.
+        </p>
+      </div>
+    </section>
+
+    <section id="servicos" class="section-padding bg-gray-100">
+      <div class="container">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-center mb-8 text-w2-dark"
+        >
+          Nossos Serviços
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="text-4xl text-w2-green mb-4">🚗</div>
+            <h3 class="text-xl font-semibold mb-3 text-w2-dark">
+              Rastreamento em Tempo Real
+            </h3>
+            <p class="text-gray-700">
+              Monitore a localização exata do seu veículo 24 horas por dia, 7
+              dias por semana.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="text-4xl text-w2-green mb-4">🔒</div>
+            <h3 class="text-xl font-semibold mb-3 text-w2-dark">
+              Segurança Avançada
+            </h3>
+            <p class="text-gray-700">
+              Recursos como cerca virtual, alerta de movimento e bloqueio
+              remoto.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="text-4xl text-w2-green mb-4">📊</div>
+            <h3 class="text-xl font-semibold mb-3 text-w2-dark">
+              Gestão de Frotas
+            </h3>
+            <p class="text-gray-700">
+              Ideal para empresas que precisam gerenciar múltiplos veículos de
+              forma eficiente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="section-padding bg-white">
+      <div class="container">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-center mb-8 text-w2-dark"
+        >
+          Por Que Escolher a W2 Raster?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex items-start">
+            <div class="text-3xl text-w2-green mr-4">✅</div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-w2-dark">
+                Tranquilidade Garantida
+              </h3>
+              <p class="text-gray-700">
+                Saiba que seu veículo está sempre sob monitoramento.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="text-3xl text-w2-green mr-4">💰</div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-w2-dark">Economia</h3>
+              <p class="text-gray-700">
+                Ajuda a reduzir custos com seguro e otimizar rotas.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="text-3xl text-w2-green mr-4">⏱️</div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-w2-dark">
+                Suporte 24/7
+              </h3>
+              <p class="text-gray-700">
+                Nossa equipe está sempre pronta para ajudar.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="text-3xl text-w2-green mr-4">📱</div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-w2-dark">
+                Plataforma Intuitiva
+              </h3>
+              <p class="text-gray-700">
+                Acesse as informações do seu veículo de forma fácil pelo celular
+                ou computador.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section-padding bg-w2-dark text-white">
+      <div class="container text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8">Entre em Contato</h2>
+        <p class="text-base md:text-lg mb-8">
+          Estamos prontos para oferecer a melhor solução de rastreamento para
+          você.
+        </p>
+        <div
+          class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8"
+        >
+          <div>
+            <div class="text-2xl mb-2">📞</div>
+            <p class="text-xl font-semibold">Telefone:</p>
+            <p>(19) 98144-4448</p>
+          </div>
+          <div>
+            <div class="text-2xl mb-2">📧</div>
+            <p class="text-xl font-semibold">Email:</p>
+            <p>contato@w2raster.com.br</p>
+          </div>
+          <div>
+            <div class="text-2xl mb-2">🗺️</div>
+            <p class="text-xl font-semibold">Área de Atuação:</p>
+            <p>Campinas - SP e região</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-w2-black text-white py-8 text-center">
+      <div class="container">
+        <p>&copy; 2025 W2 Raster. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Você pode adicionar JavaScript aqui para funcionalidades como scroll suave
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
