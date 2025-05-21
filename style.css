@@ -28,8 +28,8 @@ body {
 }
 
 .whatsapp-icon {
-  width: 40px; /* Ajuste o tamanho do ícone conforme necessário */
-  height: 40px;
+  width: 35px; /* Ajuste o tamanho do ícone conforme necessário */
+  height: 35px;
   display: block;
   margin: 0 auto 0.5rem auto; /* Centraliza e adiciona margem inferior */
 }
