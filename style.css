@@ -26,3 +26,10 @@ body {
     max-width: 1400px; /* Aumenta o max-width para telas muito grandes */
   }
 }
+
+.whatsapp-icon {
+  width: 40px; /* Ajuste o tamanho do ícone conforme necessário */
+  height: 40px;
+  display: block;
+  margin: 0 auto 0.5rem auto; /* Centraliza e adiciona margem inferior */
+}
