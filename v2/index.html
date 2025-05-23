@@ -153,10 +153,20 @@
         align-items: center;
       }
 
-      .logo h1 {
-        font-size: 1.8rem;
-        color: var(--primary-color);
-        font-weight: 700;
+      .logo {
+        /* Remove font styles as it's now an image */
+        display: flex; /* To align image vertically if needed */
+        align-items: center;
+      }
+
+      .logo img {
+        max-height: 40px; /* Adjust based on your header height */
+        width: auto; /* Maintain aspect ratio */
+        transition: var(--transition);
+      }
+
+      #header.scrolled .logo img {
+        max-height: 30px; /* Smaller size when scrolled */
       }
 
       .menu {
@@ -886,7 +896,11 @@
     <header id="header">
       <div class="container">
         <div class="logo">
-          <h1>W2 Raster</h1>
+          <img
+            src="img/w2raster.png"
+            alt="W2 Raster Logo"
+            onerror="this.onerror=null;this.src='https://placehold.co/100x40/0056b3/ffffff?text=W2+Raster';"
+          />
         </div>
         <nav>
           <ul class="menu">
@@ -1112,12 +1126,12 @@
         <div class="estatisticas-grid">
           <div class="estatistica-item">
             <i class="fas fa-users"></i>
-            <div class="numero">100+</div>
+            <div class="numero">1.500+</div>
             <p>Clientes Satisfeitos</p>
           </div>
           <div class="estatistica-item">
             <i class="fas fa-truck-pickup"></i>
-            <div class="numero">500+</div>
+            <div class="numero">5.000+</div>
             <p>Veículos Rastreando</p>
           </div>
           <div class="estatistica-item">
