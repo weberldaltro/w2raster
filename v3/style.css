@@ -9,7 +9,7 @@
   --fonte-titulos: "Montserrat", sans-serif;
   --fonte-texto: "Lato", sans-serif;
 
-  --header-height: 70px; /* Altura do cabeçalho */
+  --header-height: 90px; /* Altura do cabeçalho */
 }
 
 /* Reset Básico e Padrões Globais */
@@ -93,7 +93,7 @@ h6 {
 }
 
 .logo img {
-  max-height: 50px;
+  max-height: 65px;
   width: auto;
   display: block;
 }
