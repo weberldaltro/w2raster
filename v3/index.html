@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W2 Raster - Rastreamento Veicular Inteligente</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-container">
+        <a href="#inicio" class="logo">
+          <img src="img/w2raster.png" alt="Logo da W2 Raster" />
+        </a>
+        <nav class="main-nav">
+          <button
+            class="menu-toggle"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="menu-principal"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <ul class="menu" id="menu-principal">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#nossos-servicos">Nossos Serviços</a></li>
+            <li><a href="#para-voce">Para Você</a></li>
+            <li><a href="#para-sua-empresa">Para Sua Empresa</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#sobre-nos">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero-section">
+        <div class="container hero-content">
+          <h1 class="hero-title">
+            W2 Raster: Segurança e Controle Total para Seus Veículos
+          </h1>
+          <p class="hero-subtitle">
+            Soluções de rastreamento inteligente para carros, motos, frotas e
+            máquinas. Tranquilidade para você, eficiência para sua empresa.
+          </p>
+          <a href="#nossos-servicos" class="btn btn-primary"
+            >Conheça Nossas Soluções</a
+          >
+        </div>
+      </section>
+
+      <section id="nossos-servicos" class="services-section">
+        <div class="container">
+          <h2 class="section-title">Nossas Soluções de Rastreamento</h2>
+          <p class="section-intro">
+            Oferecemos tecnologia de ponta para o rastreamento de uma ampla gama
+            de veículos, garantindo segurança e controle adaptados à sua
+            necessidade específica.
+          </p>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-card-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-shield"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3 class="service-card-title">Para Seu Veículo Particular</h3>
+              <p class="service-card-description">
+                Proteja seu patrimônio com monitoramento 24h, alertas em tempo
+                real e a tranquilidade de saber onde seu veículo está, a
+                qualquer momento.
+              </p>
+              <ul class="service-vehicle-list">
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-check-circle"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Carros
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-check-circle"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Motos
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-check-circle"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Scooters Elétricas
+                </li>
+              </ul>
+            </div>
+            <div class="service-card">
+              <div class="service-card-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-truck"
+                >
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <h3 class="service-card-title">Para Sua Frota e Empresa</h3>
+              <p class="service-card-description">
+                Otimize a gestão da sua frota, reduza custos operacionais e
+                aumente a segurança dos seus veículos e cargas com nossas
+                soluções corporativas.
+              </p>
+              <ul class="service-vehicle-list">
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-check-circle"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Caminhões
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-check-circle"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Máquinas Pesadas
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-check-circle"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Plataformas Elevatórias
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-check-circle"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Empilhadeiras e Tratores
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="para-voce" class="feature-section">
+        <div class="container feature-container">
+          <div class="feature-image">
+            <img
+              src="https://placehold.co/500x500/57585A/FFFFFF?text=W2+Raster\nApp"
+              alt="Aplicativo de rastreamento W2 Raster exibido em um smartphone"
+            />
+          </div>
+          <div class="feature-content">
+            <h2 class="section-title text-left">
+              Tranquilidade e Segurança na Palma da Sua Mão
+            </h2>
+            <p>
+              Para você que busca proteção para seu carro ou moto, nosso sistema
+              oferece a segurança que você precisa com a simplicidade que você
+              deseja. Saiba sempre onde seu veículo está, receba alertas
+              importantes e tenha o controle total através do nosso aplicativo
+              intuitivo.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-map-pin"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div>
+                  <strong>Monitoramento em Tempo Real</strong>
+                  <p>
+                    Acompanhe a localização exata do seu veículo 24 horas por
+                    dia, 7 dias por semana.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-bell"
+                >
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+                <div>
+                  <strong>Alertas Inteligentes</strong>
+                  <p>
+                    Receba notificações de ignição ligada, excesso de velocidade
+                    ou se o veículo sair da área de segurança (cerca virtual).
+                  </p>
+                </div>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-git-commit"
+                >
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="1.05" y1="12" x2="7" y2="12"></line>
+                  <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+                </svg>
+                <div>
+                  <strong>Histórico de Rotas</strong>
+                  <p>
+                    Consulte por onde seu veículo passou, com informações de
+                    paradas e velocidades.
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+          </div>
+        </div>
+      </section>
+      <section id="para-sua-empresa" class="feature-section reverse">
+        <div class="container feature-container">
+          <div class="feature-image">
+            <img
+              src="https://placehold.co/500x500/00A850/FFFFFF?text=W2+Raster\nDashboard"
+              alt="Dashboard de gestão de frotas da W2 Raster em um computador"
+            />
+          </div>
+          <div class="feature-content">
+            <h2 class="section-title text-left">
+              Otimize sua Frota, Reduza Custos e Aumente a Produtividade
+            </h2>
+            <p>
+              Para empresas que dependem de veículos, o controle é fundamental.
+              Nossas soluções de rastreamento para frotas permitem otimizar
+              rotas, monitorar o comportamento dos motoristas, reduzir custos
+              com combustível e manutenção, e aumentar a segurança de seus
+              ativos mais valiosos.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-trello"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <rect x="7" y="7" width="3" height="9"></rect>
+                  <rect x="14" y="7" width="3" height="5"></rect>
+                </svg>
+                <div>
+                  <strong>Controle Total da Operação</strong>
+                  <p>
+                    Visualize todos os seus veículos em um único mapa, com
+                    status em tempo real e relatórios detalhados.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-trending-down"
+                >
+                  <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                  <polyline points="17 18 23 18 23 12"></polyline>
+                </svg>
+                <div>
+                  <strong>Redução de Custos</strong>
+                  <p>
+                    Identifique rotas ineficientes, uso indevido de veículos e
+                    controle o consumo de combustível.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-shield"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <div>
+                  <strong>Mais Segurança para Motoristas e Cargas</strong>
+                  <p>
+                    Atue rapidamente em casos de emergência e proteja seus
+                    ativos contra roubos e furtos.
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <a href="#contato" class="btn btn-primary"
+              >Fale com um Especialista</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="diferenciais" class="diferenciais-section">
+        <div class="container">
+          <h2 class="section-title">Por que escolher a W2 Raster?</h2>
+          <p class="section-intro">
+            Vamos além da tecnologia. Nosso compromisso é com a sua
+            tranquilidade, oferecendo um serviço que une eficiência, segurança e
+            um relacionamento de confiança.
+          </p>
+          <div class="diferenciais-grid">
+            <div class="diferencial-card">
+              <div class="diferencial-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-users"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 class="diferencial-title">Atendimento Humanizado</h3>
+              <p>
+                Chega de robôs e esperas intermináveis. Aqui você fala com
+                pessoas que entendem do assunto e estão prontas para oferecer
+                uma solução personalizada para sua necessidade.
+              </p>
+            </div>
+
+            <div class="diferencial-card">
+              <div class="diferencial-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-shield-off"
+                >
+                  <path
+                    d="M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18"
+                  ></path>
+                  <path
+                    d="M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38"
+                  ></path>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              </div>
+              <h3 class="diferencial-title">Instalação Segura e Discreta</h3>
+              <p>
+                Nossos técnicos são especialistas em instalações fora do padrão
+                do mercado. O rastreador é posicionado em locais estratégicos e
+                de difícil acesso, aumentando drasticamente a segurança.
+              </p>
+            </div>
+
+            <div class="diferencial-card">
+              <div class="diferencial-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-bar-chart-2"
+                >
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="diferencial-title">Experiência Comprovada</h3>
+              <p>
+                Sua segurança está em boas mãos. Temos orgulho dos nossos
+                números, que refletem a confiança e a satisfação de quem escolhe
+                a W2 Raster.
+              </p>
+              <div class="stats-container">
+                <div class="stat">
+                  <span class="stat-number">2014</span>
+                  <span class="stat-label">Fundada em</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">+500</span>
+                  <span class="stat-label">Veículos Rastreados</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">+50</span>
+                  <span class="stat-label">Clientes Satisfeitos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="sobre-nos" class="about-section">
+        <div class="container">
+          <h2 class="section-title">Nossa História de Confiança</h2>
+          <div class="about-content">
+            <p>
+              Fundada em 2014, a W2 Raster nasceu com uma missão clara: ir além
+              da tecnologia de rastreamento e oferecer verdadeira paz de
+              espírito aos nossos clientes. Para nós, cada carro, moto ou
+              caminhão não é apenas um veículo, mas um patrimônio valioso que
+              merece ser protegido com o máximo de cuidado e eficiência.
+            </p>
+            <p>
+              Ao longo de mais de uma década, construímos uma base sólida de
+              confiança, sempre priorizando um atendimento próximo e soluções
+              que realmente fazem a diferença no dia a dia de pessoas e
+              empresas. Não vendemos apenas rastreadores; entregamos segurança,
+              controle e um parceria de longo prazo.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="contato" class="contact-section">
+        <div class="container">
+          <h2 class="section-title">Entre em Contato</h2>
+          <p class="section-intro">
+            Estamos prontos para tirar suas dúvidas e encontrar a solução
+            perfeita para você. Fale conosco através de nossos canais de
+            atendimento.
+          </p>
+          <div class="contact-details-centered">
+            <div class="contact-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-phone"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+              <h3>Telefone / WhatsApp</h3>
+              <p>
+                <a href="https://wa.me/5519981444448" target="_blank"
+                  >(19) 98144-4448</a
+                >
+              </p>
+            </div>
+            <div class="contact-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-mail"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <h3>E-mail</h3>
+              <p>
+                <a href="mailto:contato@w2raster.com.br"
+                  >contato@w2raster.com.br</a
+                >
+              </p>
+            </div>
+            <div class="contact-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-map-pin"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <h3>Área de Atuação</h3>
+              <p>Atendemos em Campinas e em toda a região metropolitana.</p>
+            </div>
+          </div>
+          <div class="contact-cta">
+            <a
+              href="https://wa.me/5519981444448?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20rastreamento."
+              class="btn btn-primary btn-whatsapp"
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="currentColor"
+              >
+                <path
+                  d="M16.6 14.2l-1.5-1.5-2.5 2.5-3.5-3.5 2.5-2.5-1.5-1.5-4.1 4.1c-.6.6-.6 1.5 0 2.1l5.6 5.6c.6.6 1.5.6 2.1 0l4.1-4.1zm5.1-1.7c-.3-1.4-.8-2.7-1.5-3.9-1.5-2.6-3.8-4.5-6.6-5.5-1.4-.5-2.8-.7-4.2-.7H9.2c-4.8 0-8.8 3.9-8.8 8.8 0 1.6.4 3.1 1.2 4.5l-1.3 4.9c-.2.6.3 1.2.9.9l4.9-1.3c1.4.8 2.9 1.2 4.5 1.2h.2c4.8 0 8.8-3.9 8.8-8.8 0-1.4-.2-2.9-.7-4.2zm-2.1 5.6c-.5.8-1.2 1.6-2 2.2-.9.7-1.9 1.1-3 1.3-1.1.2-2.2.2-3.3 0s-2.1-.6-3-1.2l-.3-.2-3.5.9.9-3.5-.2-.3c-1.3-1.8-1.8-4-1.6-6.2.2-2.2 1.2-4.3 2.8-5.9 1.6-1.6 3.7-2.6 5.9-2.8 2.2-.2 4.4.3 6.2 1.6 1.8 1.3 3.1 3.2 3.7 5.3.6 2.1.5 4.3-.4 6.3z"
+                ></path>
+              </svg>
+              Chamar no WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2024 W2 Raster. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
