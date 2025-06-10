@@ -260,22 +260,22 @@ h6 {
   font-size: 2.2rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: var(--cor-preto);
-  padding-top: 60px;
+  padding-top: 0;
 }
 
 .section-intro {
   font-size: 1.1rem;
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 50px auto;
   color: var(--cor-cinza-escuro);
 }
 
 /* --- Estilos da Seção Nossos Serviços (#nossos-servicos) --- */
 .services-section {
-  padding-bottom: 60px;
+  padding-bottom: 80px 0;
   background-color: var(--cor-cinza-claro);
 }
 
@@ -342,7 +342,7 @@ h6 {
 
 /* --- Estilos da Seção de Destaques (#para-voce e #para-sua-empresa) --- */
 .feature-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: var(--cor-branco);
 }
 
@@ -412,7 +412,7 @@ h6 {
 
 /* --- Estilos da Seção Diferenciais (#diferenciais) --- */
 .diferenciais-section {
-  padding: 60px 0;
+  padding: 80px 0;
   background-color: var(--cor-cinza-claro);
 }
 
@@ -486,7 +486,7 @@ h6 {
 
 /* --- Estilos da Seção Sobre Nós (#sobre-nos) --- */
 .about-section {
-  padding: 60px 0;
+  padding: 80px 0;
   background-color: var(--cor-branco);
 }
 
@@ -508,7 +508,7 @@ h6 {
 
 /* --- Estilos da Seção de Contato (Versão Simplificada) --- */
 .contact-section {
-  padding: 60px 0;
+  padding: 80px 0;
   background-color: var(--cor-cinza-claro);
   text-align: center;
 }
@@ -589,6 +589,11 @@ h6 {
 .site-footer p {
   margin: 0;
   font-size: 0.9rem;
+}
+
+#nossos-servicos {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
 }
 
 /* --- Media Queries para Responsividade --- */
@@ -706,6 +711,28 @@ h6 {
 
   .feature-list {
     text-align: left;
+  }
+
+  .services-section,
+  .feature-section,
+  .diferenciais-section,
+  .about-section,
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Centraliza o título que antes era alinhado à esquerda no mobile */
+  .section-title.text-left {
+    text-align: center;
+  }
+
+  #nossos-servicos {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
   }
 }
 
