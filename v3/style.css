@@ -16,32 +16,33 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Faz o padding e border não aumentarem o tamanho total do elemento */
+  box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth; /* Rolagem suave ao clicar nos links âncora */
-  font-size: 16px; /* Define um tamanho de fonte base */
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   font-family: var(--fonte-texto);
   color: var(--cor-cinza-escuro);
-  line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+  line-height: 1.6;
   background-color: var(--cor-branco);
+  padding-top: var(--header-height);
 }
 
 a {
-  text-decoration: none; /* Remove sublinhado padrão dos links */
+  text-decoration: none;
   color: var(--cor-principal);
 }
 
 ul {
-  list-style: none; /* Remove marcadores de lista */
+  list-style: none;
 }
 
 img {
-  max-width: 100%; /* Imagens responsivas por padrão */
+  max-width: 100%;
   display: block;
 }
 
@@ -53,78 +54,95 @@ h5,
 h6 {
   font-family: var(--fonte-titulos);
   color: var(--cor-preto);
-  margin-bottom: 0.75em; /* Espaçamento abaixo dos títulos */
+  margin-bottom: 0.75em;
 }
 
 .container {
-  max-width: 1100px; /* Largura máxima do conteúdo centralizado */
-  margin: 0 auto; /* Centraliza o container */
-  padding: 0 20px; /* Espaçamento lateral para não colar nas bordas em telas menores */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Estilos do Cabeçalho */
 .site-header {
   background-color: var(--cor-branco);
-  padding: 0 20px; /* Espaçamento interno vertical e horizontal */
-  position: fixed; /* Cabeçalho fixo no topo */
+  padding: 0 20px;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Garante que o header fique sobre outros elementos */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   height: var(--header-height);
-  display: flex; /* Para alinhar o container interno verticalmente se necessário */
-  align-items: center; /* Alinha o .header-container verticalmente */
+  display: flex;
+  align-items: center;
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between; /* Logo à esquerda, navegação à direita */
+  justify-content: space-between;
   align-items: center;
-  width: 100%; /* Para ocupar o espaço do .site-header */
+  width: 100%;
   height: 100%;
 }
 
-/* --- Estilos do Logo (Imagem) --- */
+/* --- Logo --- */
 .logo {
-  display: block; /* Boa prática para links que contêm imagens */
-  padding: 5px 0; /* Espaçamento para o logo não colar no topo/base do header */
+  display: block;
+  padding: 5px 0;
 }
 
 .logo img {
-  max-height: 50px; /* CONTROLE O TAMANHO DO LOGO AQUI */
-  width: auto; /* Mantém a proporção correta da imagem */
-  display: block; /* Remove espaços extras indesejados abaixo da imagem */
+  max-height: 50px;
+  width: auto;
+  display: block;
 }
 
+/* --- Navegação Principal --- */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espaçamento entre o menu e o botão */
+}
+
+/* Reset explícito e layout para a lista do menu */
 .main-nav .menu {
-  display: flex; /* Alinha os itens do menu horizontalmente */
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+/* Reset para os itens da lista */
 .main-nav .menu li {
-  margin-left: 25px; /* Espaçamento entre os itens do menu */
+  margin: 0;
+  padding: 0;
 }
 
+/* Links do menu */
 .main-nav .menu a {
+  display: block;
   font-family: var(--fonte-texto);
   color: var(--cor-cinza-escuro);
-  font-weight: 700; /* Lato Bold */
+  font-weight: 700;
   font-size: 0.95rem;
-  padding: 10px 5px;
-  position: relative; /* Para o efeito de sublinhado */
+  padding: 10px 15px; /* Padding ajustado para consistência */
+  position: relative;
   transition: color 0.3s ease;
+  white-space: nowrap; /* Impede que os links quebrem a linha */
 }
 
 .main-nav .menu a::after {
-  /* Efeito de sublinhado sutil no hover */
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 0;
+  left: 15px;
+  right: 15px;
   height: 2px;
   background-color: var(--cor-principal);
-  transition: width 0.3s ease;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .main-nav .menu a:hover {
@@ -132,17 +150,16 @@ h6 {
 }
 
 .main-nav .menu a:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
-/* Botão Hamburger Menu (inicialmente escondido em telas maiores) */
 .menu-toggle {
-  display: none; /* Escondido por padrão (desktop) */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1001; /* Acima do menu para ser clicável */
+  z-index: 1001;
 }
 
 .hamburger-line {
@@ -154,276 +171,164 @@ h6 {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Ajustes para o corpo da página não ficar atrás do header fixo */
-body {
-  padding-top: var(--header-height);
-}
-
-/* --- Media Queries para Responsividade do Menu --- */
-@media (max-width: 768px) {
-  .main-nav .menu {
-    display: none; /* Esconde o menu desktop */
-    flex-direction: column; /* Menu mobile será vertical */
-    position: absolute;
-    top: var(--header-height); /* Abaixo do cabeçalho */
-    left: 0;
-    width: 100%;
-    background-color: var(--cor-branco);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 15px 0; /* Espaçamento interno */
-  }
-
-  .main-nav .menu.active {
-    /* Classe 'active' será adicionada via JavaScript */
-    display: flex;
-  }
-
-  .main-nav .menu li {
-    margin: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .main-nav .menu a {
-    display: block; /* Ocupa toda a largura do li */
-    padding: 15px 20px; /* Mais área de toque */
-    border-bottom: 1px solid var(--cor-cinza-claro);
-  }
-  .main-nav .menu li:last-child a {
-    border-bottom: none;
-  }
-
-  .main-nav .menu a:hover,
-  .main-nav .menu a:focus {
-    background-color: var(--cor-cinza-claro);
-    color: var(--cor-principal);
-  }
-  .main-nav .menu a::after {
-    /* Remove efeito de sublinhado no mobile */
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block; /* Mostra o botão hamburger */
-  }
-
-  /* Animação do Hamburger para "X" quando o menu está ativo */
-  .menu-toggle.active .hamburger-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .menu-toggle.active .hamburger-line:nth-child(2) {
-    opacity: 0;
-  }
-  .menu-toggle.active .hamburger-line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-}
-
-/* Placeholder para seções (apenas para visualização inicial) */
-#inicio,
-#nossos-servicos {
-  padding-top: 20px; /* Para não colar no header */
-}
-
-/* ... (todo o CSS anterior) ... */
-
-/* Estilos Globais para Botões (reutilizáveis) */
+/* Estilos Globais para Botões */
 .btn {
-  display: inline-block; /* Permite padding e margin, mas se comporta como texto */
+  display: inline-block;
   padding: 12px 28px;
-  font-family: var(
-    --fonte-titulos
-  ); /* Usando a fonte de títulos para destaque */
+  font-family: var(--fonte-titulos);
   font-size: 1rem;
-  font-weight: 700; /* Bold */
+  font-weight: 700;
   text-transform: uppercase;
-  border-radius: 5px; /* Bordas arredondadas */
+  border-radius: 5px;
   text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
   cursor: pointer;
   border: none;
 }
 
 .btn-primary {
-  background-color: var(--cor-principal); /* Verde W2 Raster */
+  background-color: var(--cor-principal);
   color: var(--cor-branco);
 }
 
 .btn-primary:hover {
-  background-color: #008f45; /* Um tom de verde um pouco mais escuro para o hover */
-  transform: translateY(-2px); /* Efeito sutil de levantar o botão */
+  background-color: #008f45;
+  transform: translateY(-2px);
+}
+
+/* Estilos do Botão "Área do Cliente" no Header */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--cor-principal);
+  border: 2px solid var(--cor-principal);
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--cor-principal);
+  color: var(--cor-branco);
+  transform: translateY(-2px);
+}
+
+/* Ajustes específicos e mais controlados para o botão no header */
+.header-btn-desktop {
+  padding: 8px 16px; /* Padding controlado */
+  font-size: 0.9rem; /* Fonte um pouco menor */
+  line-height: 1.4; /* Altura de linha controlada */
+  white-space: nowrap;
+}
+
+.header-btn-mobile {
+  display: none;
 }
 
 /* --- Estilos da Seção Herói (#inicio) --- */
 .hero-section {
-  background-color: var(
-    --cor-cinza-escuro
-  ); /* Cor de fundo escura para contraste */
-  /* Você pode adicionar uma imagem de fundo aqui depois:
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('sua-imagem-de-fundo.jpg');
-    background-size: cover;
-    background-position: center;
-    */
-  color: var(--cor-branco); /* Texto branco para contrastar com fundo escuro */
-  height: calc(
-    100vh - var(--header-height)
-  ); /* Altura total da tela menos a altura do header */
-  display: flex; /* Para centralizar o conteúdo verticalmente e horizontalmente */
+  background-color: var(--cor-cinza-escuro);
+  color: var(--cor-branco);
+  height: calc(100vh - var(--header-height));
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center; /* Centraliza o texto dentro do hero-content */
-  padding: 0 20px; /* Para evitar que o texto cole nas bordas em telas muito pequenas */
+  text-align: center;
+  padding: 0 20px;
 }
 
 .hero-content {
-  max-width: 800px; /* Limita a largura do conteúdo de texto */
+  max-width: 800px;
 }
 
 .hero-title {
-  font-size: 2.8rem; /* Tamanho grande para o título principal */
-  font-weight: 800; /* Montserrat Extra Bold */
-  color: var(--cor-branco); /* Garante que o H1 seja branco aqui */
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--cor-branco);
   margin-bottom: 20px;
   line-height: 1.2;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
-  font-family: var(--fonte-texto); /* Lato para o subtítulo */
-  color: var(
-    --cor-cinza-claro
-  ); /* Um cinza claro para não competir com o título */
+  font-family: var(--fonte-texto);
+  color: var(--cor-cinza-claro);
   margin-bottom: 30px;
   line-height: 1.7;
 }
 
-/* Ajustes Responsivos para a Seção Herói */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.2rem; /* Um pouco menor em tablets */
-  }
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    height: auto; /* Altura automática para conteúdo fluir em telas pequenas */
-    min-height: calc(
-      80vh - var(--header-height)
-    ); /* Mínimo para ainda parecer uma seção de destaque */
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  .hero-title {
-    font-size: 1.8rem; /* Menor ainda em celulares */
-  }
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-}
-
-/* Remover o padding-top das seções de placeholder que usamos para teste */
-#nossos-servicos,
-#para-voce,
-#para-sua-empresa,
-#diferenciais,
-#sobre-nos,
-#contato {
-  padding-top: 0; /* Resetando, pois cada seção terá seu próprio padding */
-}
-
-/* ... (todo o CSS anterior, incluindo o da seção Herói) ... */
-
-/* Estilos Globais para Títulos de Seção e Introdução (reutilizáveis) */
+/* Estilos Globais para Títulos de Seção e Introdução */
 .section-title {
   font-size: 2.2rem;
-  font-weight: 700; /* Montserrat Bold */
+  font-weight: 700;
   text-align: center;
   margin-bottom: 20px;
   color: var(--cor-preto);
-  padding-top: 60px; /* Espaçamento acima do título da seção */
+  padding-top: 60px;
 }
 
 .section-intro {
   font-size: 1.1rem;
   text-align: center;
-  max-width: 700px; /* Limita a largura do texto introdutório */
-  margin: 0 auto 40px auto; /* Centraliza e adiciona margem inferior */
+  max-width: 700px;
+  margin: 0 auto 40px auto;
   color: var(--cor-cinza-escuro);
 }
 
 /* --- Estilos da Seção Nossos Serviços (#nossos-servicos) --- */
 .services-section {
-  padding-bottom: 60px; /* Espaçamento abaixo da seção */
-  background-color: var(
-    --cor-cinza-claro
-  ); /* Fundo cinza claro para alternar com o branco */
+  padding-bottom: 60px;
+  background-color: var(--cor-cinza-claro);
 }
 
 .services-grid {
-  display: grid; /* Usando Grid para o layout dos cards */
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  ); /* Cria colunas responsivas */
-  gap: 30px; /* Espaço entre os cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .service-card {
   background-color: var(--cor-branco);
   padding: 30px 25px;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra sutil para destacar o card */
-  text-align: center; /* Centraliza o conteúdo do card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-5px); /* Efeito de levantar no hover */
+  transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-}
-
-.service-card-icon {
-  margin-bottom: 20px;
 }
 
 .service-card-icon svg {
   width: 48px;
   height: 48px;
-  color: var(--cor-principal); /* Cor verde para os ícones */
+  color: var(--cor-principal);
+  margin-bottom: 20px;
 }
 
 .service-card-title {
   font-size: 1.5rem;
-  font-weight: 700; /* Montserrat Bold */
+  font-weight: 700;
   margin-bottom: 15px;
-  color: var(--cor-preto);
 }
 
 .service-card-description {
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: var(--cor-cinza-escuro);
 }
 
 .service-vehicle-list {
-  padding-left: 0; /* Remove padding padrão da ul */
-  text-align: left; /* Alinha o texto da lista à esquerda dentro do card */
-  margin: 0 auto; /* Centraliza a lista se ela for menor que o card */
-  max-width: 280px; /* Ajuste conforme necessário */
+  padding-left: 0;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 280px;
 }
 
 .service-vehicle-list li {
   font-size: 0.9rem;
   margin-bottom: 8px;
-  display: flex; /* Para alinhar o ícone e o texto */
+  display: flex;
   align-items: center;
 }
 
@@ -431,73 +336,38 @@ body {
   width: 16px;
   height: 16px;
   color: var(--cor-principal);
-  margin-right: 8px; /* Espaço entre o ícone e o texto */
-  flex-shrink: 0; /* Impede que o ícone encolha */
+  margin-right: 8px;
+  flex-shrink: 0;
 }
-
-/* Ajustes Responsivos para a Seção de Serviços */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-    padding-top: 50px;
-  }
-  .section-intro {
-    font-size: 1rem;
-    margin-bottom: 30px;
-  }
-  .services-grid {
-    gap: 20px; /* Espaço menor entre os cards */
-  }
-  .service-card {
-    padding: 25px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.8rem;
-    padding-top: 40px;
-  }
-  .service-card-title {
-    font-size: 1.3rem;
-  }
-}
-
-/* ... (todo o CSS anterior) ... */
 
 /* --- Estilos da Seção de Destaques (#para-voce e #para-sua-empresa) --- */
 .feature-section {
-  padding: 60px 0; /* Espaçamento interno vertical da seção */
-  background-color: var(
-    --cor-branco
-  ); /* Fundo branco para alternar com o cinza */
+  padding: 100px 0;
+  background-color: var(--cor-branco);
 }
 
 .feature-container {
-  display: flex; /* Usando Flexbox para o layout de duas colunas */
-  align-items: center; /* Alinha os itens verticalmente ao centro */
-  gap: 50px; /* Espaço entre a imagem e o conteúdo */
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
-/* Alinha a imagem à esquerda e o conteúdo à direita */
 .feature-image {
-  flex: 1 1 45%; /* flex-grow, flex-shrink, flex-basis */
+  flex: 1 1 45%;
   max-width: 45%;
 }
 
 .feature-image img {
-  border-radius: 8px; /* Bordas arredondadas para a imagem */
+  border-radius: 8px;
   width: 100%;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Alinha o conteúdo à direita */
 .feature-content {
   flex: 1 1 55%;
   max-width: 55%;
 }
 
-/* Modificador para o título alinhado à esquerda */
 .section-title.text-left {
   text-align: left;
 }
@@ -509,18 +379,18 @@ body {
 }
 
 .feature-list li {
-  display: flex; /* Alinha o ícone e o conteúdo do item */
-  align-items: flex-start; /* Alinha no topo, caso o texto tenha múltiplas linhas */
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 25px;
 }
 
 .feature-list svg {
-  flex-shrink: 0; /* Impede que o ícone encolha */
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
   color: var(--cor-principal);
-  margin-right: 15px; /* Espaço entre ícone e texto */
-  margin-top: 5px; /* Pequeno ajuste para alinhar melhor com o texto */
+  margin-right: 15px;
+  margin-top: 5px;
 }
 
 .feature-list li strong {
@@ -533,59 +403,23 @@ body {
 
 .feature-list li p {
   margin: 0;
-  color: var(--cor-cinza-escuro);
   line-height: 1.5;
 }
 
-/* Para a próxima seção, podemos inverter a ordem (imagem na direita) */
 .feature-section.reverse .feature-container {
-  flex-direction: row-reverse; /* Inverte a ordem das colunas */
+  flex-direction: row-reverse;
 }
-
-/* --- Responsividade para a Seção de Destaques --- */
-@media (max-width: 768px) {
-  .feature-container {
-    flex-direction: column; /* Coloca os itens um embaixo do outro */
-    gap: 30px;
-  }
-
-  .feature-section.reverse .feature-container {
-    flex-direction: column; /* Garante que a ordem não seja revertida no mobile */
-  }
-
-  .feature-image,
-  .feature-content {
-    max-width: 100%; /* Ocupa 100% da largura no mobile */
-  }
-
-  .section-title.text-left {
-    text-align: center; /* Centraliza o título no mobile para consistência */
-    padding-top: 20px; /* Adiciona um pouco de espaço quando a imagem vai para cima */
-  }
-
-  .feature-content {
-    text-align: center; /* Centraliza o texto e botão no mobile */
-  }
-
-  .feature-list {
-    text-align: left; /* Mantém o texto da lista alinhado à esquerda */
-  }
-}
-
-/* ... (todo o CSS anterior) ... */
 
 /* --- Estilos da Seção Diferenciais (#diferenciais) --- */
 .diferenciais-section {
   padding: 60px 0;
-  background-color: var(--cor-cinza-claro); /* Fundo cinza para alternar */
+  background-color: var(--cor-cinza-claro);
 }
 
 .diferenciais-grid {
   display: grid;
-  /* Em telas maiores, cria 3 colunas. minmax(320px, 1fr) garante que
-       em telas menores, as colunas quebrem de forma fluida. */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px; /* Espaço entre os cards */
+  gap: 30px;
 }
 
 .diferencial-card {
@@ -594,8 +428,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
-  display: flex; /* Usando flexbox para organizar o conteúdo interno */
-  flex-direction: column; /* Conteúdo empilhado verticalmente */
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -615,28 +449,25 @@ body {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 15px;
-  color: var(--cor-preto);
 }
 
 .diferencial-card p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--cor-cinza-escuro);
-  flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível, alinhando os botões (se houver) */
+  flex-grow: 1;
 }
 
-/* Estilos para os números no card de experiência */
 .stats-container {
   display: flex;
-  justify-content: space-around; /* Distribui os números uniformemente */
+  justify-content: space-around;
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 1px solid #eee; /* Linha sutil para separar as stats */
+  border-top: 1px solid #eee;
 }
 
 .stat {
   display: flex;
-  flex-direction: column; /* Número em cima, rótulo embaixo */
+  flex-direction: column;
 }
 
 .stat-number {
@@ -653,50 +484,98 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Responsividade para a seção */
-@media (max-width: 480px) {
-  .diferencial-card {
-    padding: 25px;
-  }
-
-  .stats-container {
-    flex-direction: column; /* Empilha os números em telas muito pequenas */
-    gap: 20px;
-    align-items: center;
-  }
-}
-
-/* ... (todo o CSS anterior) ... */
-
 /* --- Estilos da Seção Sobre Nós (#sobre-nos) --- */
 .about-section {
   padding: 60px 0;
-  background-color: var(--cor-branco); /* Fundo branco para alternar */
+  background-color: var(--cor-branco);
 }
 
 .about-content {
-  max-width: 800px; /* Limita a largura do texto para fácil leitura */
-  margin: 0 auto; /* Centraliza o bloco de texto */
-  text-align: center; /* Centraliza o texto */
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .about-content p {
-  font-size: 1.1rem; /* Fonte um pouco maior para dar mais destaque ao texto */
-  line-height: 1.8; /* Espaçamento generoso entre as linhas */
+  font-size: 1.1rem;
+  line-height: 1.8;
   margin-bottom: 20px;
-  color: var(--cor-cinza-escuro);
 }
 
 .about-content p:last-child {
   margin-bottom: 0;
 }
 
-/* ... (todo o CSS anterior) ... */
-
-/* --- Estilos da Seção de Contato (#contato) --- */
+/* --- Estilos da Seção de Contato (Versão Simplificada) --- */
 .contact-section {
   padding: 60px 0;
   background-color: var(--cor-cinza-claro);
+  text-align: center;
+}
+
+.contact-details-centered {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  background-color: var(--cor-branco);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  flex-basis: 300px;
+  flex-grow: 1;
+  max-width: 350px;
+}
+
+.contact-item svg {
+  color: var(--cor-principal);
+  width: 32px;
+  height: 32px;
+  margin-bottom: 15px;
+}
+
+.contact-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.contact-item p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.contact-item a {
+  font-weight: 700;
+  color: var(--cor-cinza-escuro);
+}
+
+.contact-item a:hover {
+  color: var(--cor-principal);
+  text-decoration: underline;
+}
+
+.contact-cta {
+  margin-top: 50px;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.btn-whatsapp svg {
+  margin: 0;
 }
 
 /* --- Estilos do Rodapé (Footer) --- */
@@ -712,76 +591,153 @@ body {
   font-size: 0.9rem;
 }
 
-/* --- Estilos da Seção de Contato (Versão Simplificada) --- */
-.contact-section {
-  padding: 60px 0;
-  background-color: var(--cor-cinza-claro);
-  text-align: center; /* Centraliza todo o conteúdo da seção */
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 768px) {
+  .main-nav .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-branco);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+  }
+
+  .main-nav .menu.active {
+    display: flex;
+  }
+
+  .main-nav .menu li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav .menu a {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--cor-cinza-claro);
+  }
+
+  .main-nav .menu li:last-child a {
+    border-bottom: none;
+  }
+
+  .main-nav .menu a:hover,
+  .main-nav .menu a:focus {
+    background-color: var(--cor-cinza-claro);
+    color: var(--cor-principal);
+  }
+  .main-nav .menu a::after {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .header-btn-desktop {
+    display: none;
+  }
+
+  .header-btn-mobile {
+    display: block;
+  }
+
+  .header-btn-mobile a {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco) !important;
+    font-weight: 700;
+    border-radius: 5px;
+    margin: 10px 20px 0 20px;
+    border-bottom: none;
+  }
+
+  .header-btn-mobile a:hover {
+    background-color: #008f45;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    padding-top: 50px;
+  }
+
+  .feature-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .feature-section.reverse .feature-container {
+    flex-direction: column;
+  }
+
+  .feature-image,
+  .feature-content {
+    max-width: 100%;
+  }
+
+  .section-title.text-left {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .feature-content {
+    text-align: center;
+  }
+
+  .feature-list {
+    text-align: left;
+  }
 }
 
-.contact-details-centered {
-  display: flex;
-  justify-content: center; /* Centraliza os itens na linha */
-  align-items: stretch; /* Faz os cards terem a mesma altura */
-  gap: 30px;
-  margin-top: 40px;
-  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
-}
+@media (max-width: 480px) {
+  .hero-section {
+    height: auto;
+    min-height: calc(80vh - var(--header-height));
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 
-.contact-item {
-  background-color: var(--cor-branco);
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  flex-basis: 300px; /* Define uma largura base para cada item */
-  flex-grow: 1; /* Permite que os itens cresçam para ocupar espaço */
-  max-width: 350px; /* Limita a largura máxima */
-}
+  .section-title {
+    font-size: 1.8rem;
+  }
 
-.contact-item svg {
-  color: var(--cor-principal);
-  width: 32px;
-  height: 32px;
-  margin-bottom: 15px;
-}
+  .diferencial-card {
+    padding: 25px;
+  }
 
-.contact-item h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: var(--cor-preto);
-}
-
-.contact-item p {
-  font-size: 1.1rem;
-  color: var(--cor-cinza-escuro);
-  line-height: 1.5;
-  margin: 0;
-}
-
-.contact-item a {
-  font-weight: 700;
-  color: var(--cor-cinza-escuro); /* Cor padrão para o link */
-}
-
-.contact-item a:hover {
-  color: var(--cor-principal); /* Muda para verde no hover */
-  text-decoration: underline;
-}
-
-.contact-cta {
-  margin-top: 50px; /* Espaço acima do botão de WhatsApp */
-}
-
-.btn-whatsapp {
-  display: inline-flex; /* Necessário para alinhar o ícone e o texto */
-  align-items: center;
-  justify-content: center;
-  gap: 12px; /* Espaço entre o ícone e o texto */
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.btn-whatsapp svg {
-  margin: 0;
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
 }

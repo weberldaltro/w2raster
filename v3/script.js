@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuLinks = menuPrincipal.querySelectorAll("a");
     menuLinks.forEach((link) => {
       link.addEventListener("click", () => {
+        // Só fecha o menu se ele estiver aberto (visível em telas mobile)
         if (menuPrincipal.classList.contains("active")) {
           menuPrincipal.classList.remove("active");
           menuToggle.classList.remove("active");
