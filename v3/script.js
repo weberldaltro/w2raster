@@ -37,3 +37,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// --- Lógica para Animação de Rolagem ---
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Seleciona todos os elementos que devem ser animados
+  const elementsToFadeIn = document.querySelectorAll(".fade-in-element");
+
+  // Se não houver elementos para animar, não faz nada
+  if (elementsToFadeIn.length === 0) {
+    return;
+  }
+
+  // Configurações do Intersection Observer
+  // O threshold: 0.15 significa que a animação vai disparar
+  // quando 15% do elemento estiver visível na tela.
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.15,
+  };
+
+  // Cria o observador
+  const observer = new IntersectionObserver((entries, observer) => {
+    // Percorre cada elemento que o observador "viu" mudar
+    entries.forEach((entry) => {
+      // Verifica se o elemento está agora intersectando (visível)
+      if (entry.isIntersecting) {
+        // Adiciona a classe 'visible' para disparar a animação CSS
+        entry.target.classList.add("visible");
+
+        // Otimização: uma vez que a animação aconteceu,
+        // não precisamos mais observar este elemento.
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Inicia a observação para cada um dos elementos selecionados
+  elementsToFadeIn.forEach((element) => {
+    observer.observe(element);
+  });
+});

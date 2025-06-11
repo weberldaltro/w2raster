@@ -768,3 +768,24 @@ h6 {
     align-items: center;
   }
 }
+
+/* ==========================================================================
+   Animações de Rolagem (Scroll Animation)
+   ========================================================================== */
+
+/* Este é o estado inicial dos elementos que queremos animar.
+  Eles começam invisíveis (opacidade 0) e levemente deslocados para baixo.
+*/
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(30px); /* Começa 30px abaixo da posição final */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Define a suavidade da animação */
+}
+
+/* Esta classe será adicionada via JavaScript quando o elemento estiver visível.
+  Ela torna o elemento totalmente visível e o move para sua posição original.
+*/
+.fade-in-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
