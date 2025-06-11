@@ -346,6 +346,10 @@ h6 {
   background-color: var(--cor-branco);
 }
 
+#para-sua-empresa {
+  background-color: var(--cor-cinza-claro);
+}
+
 .feature-container {
   display: flex;
   align-items: center;
@@ -413,7 +417,7 @@ h6 {
 /* --- Estilos da Seção Diferenciais (#diferenciais) --- */
 .diferenciais-section {
   padding: 80px 0;
-  background-color: var(--cor-cinza-claro);
+  background-color: var(--cor-branco);
 }
 
 .diferenciais-grid {
@@ -602,7 +606,7 @@ h6 {
 
 .gallery-section {
   padding: 80px 0;
-  background-color: var(--cor-branco); /* Fundo branco para esta seção */
+  background-color: var(--cor-cinza-claro);
 }
 
 .gallery-grid {
