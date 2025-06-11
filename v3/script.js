@@ -79,3 +79,43 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(element);
   });
 });
+
+// --- Lógica para a Galeria Lightbox ---
+
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryItems = document.querySelectorAll(".gallery-item");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxCaption = document.getElementById("lightbox-caption");
+  const lightboxClose = document.querySelector(".lightbox-close");
+
+  // Verifica se os elementos da galeria e do lightbox existem
+  if (galleryItems.length > 0 && lightbox && lightboxImg && lightboxClose) {
+    galleryItems.forEach((item) => {
+      item.addEventListener("click", function (event) {
+        event.preventDefault(); // Impede que o link navegue para outra página
+
+        const imageUrl = this.href;
+        const imageAlt = this.querySelector("img").alt;
+
+        lightboxImg.src = imageUrl;
+        lightboxCaption.textContent = imageAlt;
+        lightbox.classList.add("visible");
+      });
+    });
+
+    // Função para fechar o lightbox
+    const closeLightbox = () => {
+      lightbox.classList.remove("visible");
+    };
+
+    // Eventos para fechar o lightbox
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function (event) {
+      // Fecha somente se o clique for no fundo escuro, e não na imagem
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+});
