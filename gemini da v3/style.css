@@ -319,7 +319,7 @@ h6 {
 .service-card-description {
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 20px; /* Aumentamos o espaçamento inferior de 20px para 30px */
+  margin-bottom: 20px;
 }
 .service-card-icon svg {
   width: 48px;
@@ -433,8 +433,8 @@ h6 {
 }
 .stats-container {
   display: flex;
-  justify-content: space-around; /* Distribui os itens com espaço ao redor */
-  gap: 15px; /* Garante um espaçamento mínimo entre os itens */
+  justify-content: space-around;
+  gap: 15px;
   margin-top: 30px;
   padding-top: 20px;
   border-top: 1px solid #eee;
@@ -444,24 +444,24 @@ h6 {
 }
 .stat {
   display: flex;
-  flex-direction: column; /* Número em cima, rótulo embaixo */
-  align-items: center; /* CENTRALIZA horizontalmente o número e o rótulo */
-  text-align: center; /* Garante que o texto do rótulo, se quebrar a linha, fique centralizado */
-  flex: 1; /* Faz cada item ocupar um espaço igual, criando simetria */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
 }
 .stat-number {
   font-family: var(--fonte-titulos);
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--cor-principal);
-  line-height: 1.2; /* Melhora o alinhamento vertical */
+  line-height: 1.2;
 }
 .stat-label {
-  font-size: 0.8rem; /* Levemente reduzido para melhor encaixe */
+  font-size: 0.8rem;
   color: var(--cor-cinza-escuro);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  line-height: 1.4; /* Espaçamento entre as linhas caso o texto quebre */
+  line-height: 1.4;
 }
 
 /* --- Seção Galeria (#galeria) --- */
@@ -654,20 +654,17 @@ h6 {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  user-select: none; /* Impede que o texto da seta seja selecionado */
-  z-index: 2001; /* Garante que fiquem acima da imagem se houver sobreposição */
+  user-select: none;
+  z-index: 2001;
 }
-
 .lightbox-prev {
   left: 20px;
   border-radius: 3px;
 }
-
 .lightbox-next {
   right: 20px;
   border-radius: 3px;
 }
-
 .lightbox-prev:hover,
 .lightbox-next:hover {
   background-color: rgba(0, 0, 0, 0.7);

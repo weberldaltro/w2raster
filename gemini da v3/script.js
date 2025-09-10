@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const lightboxPrev = document.querySelector(".lightbox-prev");
   const lightboxNext = document.querySelector(".lightbox-next");
 
-  let currentIndex = 0; // Variável para rastrear a imagem atual
+  let currentIndex = 0;
 
   if (
     galleryItems.length > 0 &&
@@ -72,49 +72,43 @@ document.addEventListener("DOMContentLoaded", function () {
     lightboxPrev &&
     lightboxNext
   ) {
-    // Função para mostrar a imagem baseada em um índice
     function showImage(index) {
       const item = galleryItems[index];
       const imageUrl = item.href;
       const imageAlt = item.querySelector("img").alt;
       lightboxImg.src = imageUrl;
       lightboxCaption.textContent = imageAlt;
-      currentIndex = index; // Atualiza o índice atual
+      currentIndex = index;
     }
 
-    // Adiciona o evento de clique para cada item da galeria
     galleryItems.forEach((item, index) => {
       item.addEventListener("click", function (event) {
         event.preventDefault();
         lightbox.classList.add("visible");
-        showImage(index); // Mostra a imagem clicada
+        showImage(index);
       });
     });
 
-    // Função para fechar o lightbox
     const closeLightbox = () => {
       lightbox.classList.remove("visible");
     };
 
-    // Função para mostrar a próxima imagem
     const showNextImage = () => {
       currentIndex++;
       if (currentIndex >= galleryItems.length) {
-        currentIndex = 0; // Volta para a primeira
+        currentIndex = 0;
       }
       showImage(currentIndex);
     };
 
-    // Função para mostrar a imagem anterior
     const showPrevImage = () => {
       currentIndex--;
       if (currentIndex < 0) {
-        currentIndex = galleryItems.length - 1; // Vai para a última
+        currentIndex = galleryItems.length - 1;
       }
       showImage(currentIndex);
     };
 
-    // Eventos de clique para os botões e para fechar
     lightboxClose.addEventListener("click", closeLightbox);
     lightboxNext.addEventListener("click", showNextImage);
     lightboxPrev.addEventListener("click", showPrevImage);
