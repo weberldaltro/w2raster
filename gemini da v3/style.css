@@ -316,6 +316,11 @@ h6 {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
+.service-card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px; /* Aumentamos o espaçamento inferior de 20px para 30px */
+}
 .service-card-icon svg {
   width: 48px;
   height: 48px;
