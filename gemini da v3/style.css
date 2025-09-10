@@ -428,7 +428,8 @@ h6 {
 }
 .stats-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* Distribui os itens com espaço ao redor */
+  gap: 15px; /* Garante um espaçamento mínimo entre os itens */
   margin-top: 30px;
   padding-top: 20px;
   border-top: 1px solid #eee;
@@ -438,18 +439,24 @@ h6 {
 }
 .stat {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Número em cima, rótulo embaixo */
+  align-items: center; /* CENTRALIZA horizontalmente o número e o rótulo */
+  text-align: center; /* Garante que o texto do rótulo, se quebrar a linha, fique centralizado */
+  flex: 1; /* Faz cada item ocupar um espaço igual, criando simetria */
 }
 .stat-number {
   font-family: var(--fonte-titulos);
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--cor-principal);
+  line-height: 1.2; /* Melhora o alinhamento vertical */
 }
 .stat-label {
-  font-size: 0.85rem;
+  font-size: 0.8rem; /* Levemente reduzido para melhor encaixe */
+  color: var(--cor-cinza-escuro);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  line-height: 1.4; /* Espaçamento entre as linhas caso o texto quebre */
 }
 
 /* --- Seção Galeria (#galeria) --- */

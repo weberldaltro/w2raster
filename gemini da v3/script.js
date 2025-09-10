@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // --- Lógica para o Menu Mobile ---
+  // --- Módulo 1: Lógica para o Menu Mobile ---
   const menuToggle = document.querySelector(".menu-toggle");
   const menuPrincipal = document.querySelector("#menu-principal");
 
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // --- Lógica para Animação de Rolagem ---
+  // --- Módulo 2: Lógica para Animação de Rolagem ---
   const elementsToFadeIn = document.querySelectorAll(".fade-in-element");
 
   if (elementsToFadeIn.length > 0) {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // --- Lógica para a Galeria Lightbox ---
+  // --- Módulo 3: Lógica para a Galeria Lightbox com Navegação ---
   const galleryItems = document.querySelectorAll(".gallery-item");
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentIndex = 0; // Variável para rastrear a imagem atual
 
-  // Verifica se os elementos essenciais existem
   if (
     galleryItems.length > 0 &&
     lightbox &&
@@ -78,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const item = galleryItems[index];
       const imageUrl = item.href;
       const imageAlt = item.querySelector("img").alt;
-
       lightboxImg.src = imageUrl;
       lightboxCaption.textContent = imageAlt;
       currentIndex = index; // Atualiza o índice atual
@@ -101,9 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Função para mostrar a próxima imagem
     const showNextImage = () => {
       currentIndex++;
-      // Se passar da última, volta para a primeira (efeito de loop)
       if (currentIndex >= galleryItems.length) {
-        currentIndex = 0;
+        currentIndex = 0; // Volta para a primeira
       }
       showImage(currentIndex);
     };
@@ -111,9 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Função para mostrar a imagem anterior
     const showPrevImage = () => {
       currentIndex--;
-      // Se passar da primeira, vai para a última (efeito de loop)
       if (currentIndex < 0) {
-        currentIndex = galleryItems.length - 1;
+        currentIndex = galleryItems.length - 1; // Vai para a última
       }
       showImage(currentIndex);
     };
